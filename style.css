@@ -1,0 +1,573 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    position: relative;
+    background-color: #000; /* Fallback background color */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(sesbgimg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    opacity: 0.5; /* Adjust the opacity as needed */
+    z-index: -2; /* Place the background div behind the content */
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black color with 50% opacity */
+    z-index: -1; /* Place the overlay div behind the content */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px 50px;
+    background-color: rgb(16, 14, 14);
+    position: fixed; /* Keep header fixed at the top */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width */
+    z-index: 100; /* Ensure header is above other content */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 20px; /* Add gap between logo image and text */
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ddd;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.logo-text-responsive {
+    display: none; /* Hide by default on larger screens */
+    font-size: 1.2rem; /* Adjust font size */
+    font-weight: bold;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+nav {
+    margin-left: auto; /* Push nav to the right */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Add gap between navigation items */
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(241, 224, 33);
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: white;
+    transition: width 0.3s ease;
+    -webkit-transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: white; /* Line color */
+}
+
+.main-content {
+    padding-top: 120px; /* Ensure content starts below fixed header */
+    box-sizing: border-box; /* Include padding in total height */
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 20px; /* Adjust padding for centering */
+    box-sizing: border-box; /* Include padding in total height */
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: orange;
+    font-weight: bold;
+}
+
+.hero-image {
+    width: 400px; /* Adjust size for visiting card */
+    height: auto;
+    margin-bottom: 20px;
+    border: 2px solid transparent; /* Orange color border */
+    animation: hoverAnimation 1s infinite alternate ease-in-out; /* Animation properties */
+}
+
+@keyframes hoverAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.03);
+    }
+}
+
+p {
+    font-size: 24px; /* Adjust font size */
+    font-weight: bold;
+    margin: 0 auto 20px; /* Auto margins for centering */
+    max-width: 90%; /* Limit paragraph width */
+    text-align: justify;
+    background-color: transparent; /* Remove background color */
+    padding: 10px; /* Padding for readability */
+    box-sizing: border-box; /* Include padding in total width */
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #2c3e50;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #ffb700;
+    color: black;
+}
+
+.content-section {
+    padding: 60px 20px;
+    margin-top: 20px; /* Adjust top margin as needed */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.about-us {
+    max-width: 100%; /* Adjust width as needed */
+    margin: 0 auto; /* Center align */
+    background-color: transparent; /* Remove background color */
+}
+
+.about-us h1 {
+    font-size: 36px; /* Increase font size */
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffb700; /* Orange color */
+}
+
+.about-us p {
+    font-size: 24px; /* Increase font size */
+    line-height: 1.6;
+    text-align: justify;
+    background-color: transparent; /* Remove background color */
+}
+
+.rectangles-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.rectangle {
+    width: 300px;
+    height: 350px;
+    background-color: #fff;
+    border: #000 2px solid;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    overflow: hidden;
+}
+
+.rectangle:hover {
+    background-color: orange;
+    transform: scale(1.05);
+}
+
+.rectangle .image {
+    height: 60%;
+    background-color: white;
+}
+
+.rectangle .description {
+    color: #000;
+    height: 40%;
+    padding: 10px;
+    text-align: center;
+}
+
+.rectangle .description h3 {
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.rectangle .description p {
+    color: #000;
+    font-size: 14px;
+    margin: 0;
+}
+
+.title-description {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.title-description h2 {
+    font-weight: bold;
+    color: orange;
+    font-size: 32px;
+}
+
+.title-description p {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#services {
+    padding: 60px 20px;
+    background-color: transparent; /* Transparent background */
+    color: #fff;
+    text-align: center;
+}
+
+#services h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffb700; /* Orange color */
+    margin-bottom: 40px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    transition: transform 0.3s;
+}
+
+.service:hover {
+    transform: scale(1.1);
+}
+
+.service-image {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ffb700; /* Orange border */
+    margin-bottom: 20px;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+#contact-us {
+    padding: 50px;
+    text-align: center;
+}
+
+#contact-us h2 {
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: orange;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: fadeInUp 1s ease-in-out;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-item i {
+    font-size: 36px;
+    color: #ff6600;
+    margin-right: 20px;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.contact-info h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+.contact-info p {
+    margin: 5px 0 0;
+    font-size: 18px;
+    color: #666;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Media queries for responsive design */
+@media (max-width: 480px) {
+    .logo img {
+        width: 40px; /* Adjust logo size for smaller screens */
+    }
+    .logo-text {
+        display: none; /* Hide logo text on smaller screens */
+    }
+
+    .logo-text-responsive {
+        display: block; /* Show responsive "SES" text on smaller screens */
+        margin-left: 2px; /* Push "SES" text to the right */
+        font-size: 1rem; /* Adjust font size */
+        color: #ddd; /* Example color */
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Hide navigation links by default on mobile */
+        width: 100%;
+        padding-top: 20px;
+        position: fixed; /* Position relative to viewport */
+        top: 60px; /* Position below the header */
+        left: 0;
+        background-color: black;
+        z-index: 99; /* Ensure it's above other content */
+    }
+
+    nav ul.active {
+        display: flex; /* Show navigation links when active */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger menu icon on mobile */
+    }
+
+    .hero {
+        padding-top: 120px; /* Ensure content starts below fixed header */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    /* Hero and other sections styles (for mobile) */
+    .hero {
+        padding: 40px 10px; /* Adjust padding */
+    }
+
+    .hero-image {
+        width: 200px; /* Adjust size for smaller screens */
+        margin-bottom: 10px; /* Adjust margin */
+    }
+
+    h1 {
+        font-size: 20px; /* Adjust font size */
+    }
+
+    p {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    button {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 14px; /* Adjust button font size */
+    }
+
+    .content-section {
+        padding: 30px 10px; /* Adjust content section padding */
+    }
+
+    .rectangle {
+        max-width: 100%;
+        height: 350px; /* Adjust rectangle height */
+    }
+
+    .rectangle:hover {
+        background-color: orange; /* Hover effect background color */
+        transform: scale(1.05); /* Hover effect zoom */
+    }
+
+    .about-us h1 {
+        font-size: 20px; /* Adjust font size */
+    }
+
+    .about-us p {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .title-description h2 {
+        font-size: 20px; /* Adjust font size */
+    }
+
+    .title-description p {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    #services h1 {
+        font-size: 20px; /* Adjust font size */
+        margin-bottom: 10px;
+    }
+
+    .service h2 {
+        font-size: 12px; /* Adjust font size */
+    }
+
+    #contact-us h2 {
+        font-size: 20px; /* Adjust font size */
+    }
+
+    .contact-item {
+        padding: 8px;
+    }
+
+    .contact-item i {
+        font-size: 18px; /* Adjust icon size */
+    }
+
+    .contact-info h3 {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .contact-info p {
+        font-size: 12px; /* Adjust font size */
+    }
+}
